@@ -1,30 +1,32 @@
 {
-  "name": "ts-template",
+  "name": "ts-mono",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.js",
   "scripts": {
-    "build": "tsc && tsc-alias",
-    "eslint": "eslint src --fix",
-    "format": "prettier --write '{src,tests}/**/*.ts'",
-    "test": "node --test --require ts-node/register ./tests/test_*.ts"
+    "test": "yarn workspaces run test",
+    "build": "yarn workspaces run build",
+    "eslint": "yarn workspaces run eslint",
+    "format": "yarn workspaces run format"
   },
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/isamu/ts-template.git"
+    "url": "git+https://github.com/isamu/ts-mono.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/isamu/ts-template/issues"
+    "url": "https://github.com/isamu/ts-mono/issues"
   },
-  "homepage": "https://github.com/isamu/ts-template#readme",
+  "homepage": "https://github.com/isamu/ts-mono#readme",
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@types/node": "^22.5.0",
     "eslint": "^9.9.0",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
-    "tsc-alias": "^1.8.10",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.2.0"
